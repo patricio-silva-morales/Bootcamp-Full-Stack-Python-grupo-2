@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejemplo de Bootstrap y Formulario</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+background-color: azure;
+}
+</style>
+</head>
+<body>
+<div class="container bg-light shadow p-3">
+<div class="text-center mb-5">
+<h1>Suma</h1>
+<p>Esta aplicación permite sumar dos números.</p>
+</div>
+
+<div class="input-group mb-3">
+<label for="numero1" class="input-group-text">Número 1:</label><input type="number" placeholder="Ingrese un número" id="numero1" class="form-control">
+</div>
+
+<div class="input-group mb-5">
+<label for="numero2" class="input-group-text">Número 2:</label><input type="number" placeholder="Ingrese un número" id="numero2" class="form-control">
+</div>
+
+<div class="mb-5">
+resultado: <strong><span id="resultado"></span></strong>
+</div>
+
+<div class="dropdown d-grid">
+<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+Seleccionar operación
+</button>
+<ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+<li><button class="dropdown-item" onclick="sumar();">Sumar</button></li>
+<li><button class="dropdown-item" onclick="restar();">Restar</button></li>
+<li><button class="dropdown-item" onclick="multiplicar();">Multiplicar</button></li>
+<li><button class="dropdown-item" onclick="dividir();">Dividir</button></li>
+</ul>
+</div>
+</div>
+
+<script>
+function sumar() {
+// Declaro dos variables
+let num1 = Number(document.getElementById("numero1").value);
+let num2 = Number(document.getElementById("numero2").value);
+
+let resultado = num1 + num2;
+
+document.getElementById("resultado").textContent = resultado;
+
+}
+function restar() {
+let num1 = Number(document.getElementById("numero1").value);
+let num2 = Number(document.getElementById("numero2").value);
+
+let resultado = num1 - num2;
+
+document.getElementById("resultado").textContent = resultado;
+}
+function multiplicar() {
+let num1 = Number(document.getElementById("numero1").value);
+let num2 = Number(document.getElementById("numero2").value);
+
+let resultado = num1 * num2;
+
+document.getElementById("resultado").textContent = resultado;
+}
+function dividir() {
+let num1 = Number(document.getElementById("numero1").value);
+let num2 = Number(document.getElementById("numero2").value);
+
+let resultado = num1 / num2;
+
+document.getElementById("resultado").textContent = resultado;
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
